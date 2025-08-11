@@ -1,0 +1,44 @@
+name: Bug report
+description: Laporkan perilaku yang tidak diharapkan
+labels: [bug]
+title: "[Bug] <judul singkat>"
+body:
+  - type: textarea
+    id: steps
+    attributes:
+      label: Langkah Reproduksi
+      placeholder: |
+        1. Buka ...
+        2. Klik ...
+        3. Lihat error ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Perilaku yang Diharapkan
+      placeholder: Apa yang seharusnya terjadi?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Perilaku Aktual
+      placeholder: Apa yang benar-benar terjadi?
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log/Output
+      description: Salin potongan log/error yang relevan (jika ada)
+      render: shell
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - low
+        - medium
+        - high
+        - critical

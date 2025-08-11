@@ -1,0 +1,36 @@
+name: Feature request
+description: Ajukan penambahan/perubahan fitur kecil yang terfokus
+labels: [enhancement]
+title: "[Feature] <judul singkat>"
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Deskripsi
+      description: Apa yang diusulkan dan kenapa dibutuhkan?
+      placeholder: Jelaskan konteks, tujuan, dan ruang lingkup
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: Kapan fitur dianggap selesai?
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+  - type: textarea
+    id: test
+    attributes:
+      label: Cara Uji
+      description: Langkah uji manual/otomatis yang diharapkan
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: Isu ini cukup kecil & terfokus
+        - label: Tidak menggandakan isu lain
+        - label: Sudah ada rencana uji

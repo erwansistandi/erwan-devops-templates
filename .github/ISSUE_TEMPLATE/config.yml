@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Tanya umum / diskusi
+    url: https://github.com/<username>/<repo>/discussions
+    about: Gunakan Discussions untuk tanya jawab umum
