@@ -2,23 +2,44 @@ name: CI
 on:
   push:
   pull_request:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: CI Sanity Check
-        run: |
-          echo "CI berjalan 👍"
-          echo "Branch: $GITHUB_REF"
-          echo "Commit: $GITHUB_SHA"
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # --- Markdown lint (jalan hanya kalau ada *.md) ---
+      - name: Setup Node (for markdownlint)
+        if: hashFiles('**/*.md') != ''
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm i -g markdownlint-cli
-      - run: markdownlint "**/*.md" --ignore node_modules
-      - uses: actions/setup-python@v5
+
+      - name: Markdownlint
+        if: hashFiles('**/*.md') != ''
+        run: |
+          npm i -g markdownlint-cli
+          markdownlint "**/*.md" --ignore node_modules --config .markdownlint.json
+
+      # --- Python lint (jalan hanya kalau ada *.py) ---
+      - name: Setup Python
+        if: hashFiles('**/*.py') != ''
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install flake8
-      - run: flake8 .
+
+      - name: Flake8
+        if: hashFiles('**/*.py') != ''
+        run: |
+          pip install flake8
+          flake8 .
+
+      # --- Sanity (selalu tampil) ---
+      - name: CI Sanity Check
+        shell: bash
+        run: |
+          echo "CI berjalan 👍"
+          echo "Ref:  $GITHUB_REF"
+          echo "SHA:  $GITHUB_SHA"
