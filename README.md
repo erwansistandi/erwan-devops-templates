@@ -29,3 +29,12 @@ echo "Tetap konsisten. Progres kecil menang." >> catatan.txt
 git add . && git commit -m "feat: tambah quote motivasi (Closes #12)"
 git push -u origin issue-12-motivasi
 # buka PR: compare main...issue-12-motivasi
+
+## README — Badge tambahan
+Tambahkan badge berikut bila perlu (ganti `erwansistandi/erwan-devops-templates` sesuai repo kamu):
+
+```markdown
+[![Use this template](https://img.shields.io/badge/Use%20this%20template-💡-brightgreen)](https://github.com/erwansistandi/erwan-devops-templates/generate)
+[![CI](https://github.com/erwansistandi/erwan-devops-templates/actions/workflows/ci.yml/badge.svg)](https://github.com/erwansistandi/erwan-devops-templates/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg)](CONTRIBUTING.md)
