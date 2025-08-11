@@ -21,6 +21,7 @@ Repo template untuk menstandarkan **Issue → Branch → PR + CI**. Cocok dipaka
 Issue → Branch → PR (`Closes #N`) → CI → Review → Merge → Hapus branch
 
 ## Contoh cepat
+
 ```bash
 git switch main && git pull
 git checkout -b issue-12-motivasi
