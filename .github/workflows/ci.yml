@@ -12,3 +12,13 @@ jobs:
           echo "CI berjalan 👍"
           echo "Branch: $GITHUB_REF"
           echo "Commit: $GITHUB_SHA"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm i -g markdownlint-cli
+      - run: markdownlint "**/*.md" --ignore node_modules
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install flake8
+      - run: flake8 .
