@@ -38,3 +38,5 @@ Tambahkan badge berikut bila perlu (ganti `erwansistandi/erwan-devops-templates`
 [![CI](https://github.com/erwansistandi/erwan-devops-templates/actions/workflows/ci.yml/badge.svg)](https://github.com/erwansistandi/erwan-devops-templates/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg)](CONTRIBUTING.md)
+
+[![Release](https://img.shields.io/github/v/release/erwansistandi/erwan-devops-templates?display_name=tag)](https://github.com/erwansistandi/erwan-devops-templates/releases)
